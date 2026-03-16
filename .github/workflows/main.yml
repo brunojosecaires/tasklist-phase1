@@ -1,7 +1,10 @@
 name: CI/CD security
 on:
   workflow_dispatch:
-
+permissions:
+  actions: read
+  contents: read
+  security-events: write
 env:
   # Use docker.io for Docker Hub
   REGISTRY: ghcr.io
