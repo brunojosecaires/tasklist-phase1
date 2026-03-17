@@ -49,7 +49,7 @@ jobs:
     runs-on: ubuntu-latest
     needs: sbom-app
     permissions:
-      contents: read
+      contents: write
       packages: write
       id-token: write
   
@@ -85,8 +85,6 @@ jobs:
           image-ref: ${{ steps.meta.outputs.tags }}
           format: cyclonedx
           output: sbom-image.cdx.json
-          trivy-config: |
-            install-dir: /tmp/trivy-bin 
   
       - name: Sign SBOM Docker Image
         run: |
