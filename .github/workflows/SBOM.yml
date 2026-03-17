@@ -4,7 +4,7 @@ on:
 
 env:
   # Use docker.io for Docker Hub
-  REGISTRY: ghcr.io
+  REGISTRY: docker.io
   # github.repository as <account>/<repo>
   IMAGE_NAME: ${{ github.repository }}
 jobs:
