@@ -85,6 +85,8 @@ jobs:
           image-ref: ${{ steps.meta.outputs.tags }}
           format: cyclonedx
           output: sbom-image.cdx.json
+          trivy-config: |
+            install-dir: /tmp/trivy-bin 
   
       - name: Sign SBOM Docker Image
         run: |
